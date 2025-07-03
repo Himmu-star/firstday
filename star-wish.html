@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌌 Starry Wishes for RuHI 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(ellipse at center, #1a2a6c, #b21f1f, #fdbb2d);
+      color: white;
+      overflow: hidden;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 2rem;
+      font-size: 2.2rem;
+      color: #ffd1dc;
+      text-shadow: 0 0 10px #ff69b4;
+    }
+    .sky {
+      position: relative;
+      width: 100vw;
+      height: 80vh;
+      overflow: hidden;
+      margin-top: 2rem;
+    }
+    .star {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      border-radius: 50%;
+      cursor: pointer;
+      animation: twinkle 2s infinite alternate;
+    }
+    @keyframes twinkle {
+      from { opacity: 0.5; }
+      to { opacity: 1; }
+    }
+    .message-box {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      color: #d63384;
+      padding: 1.2rem 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      display: none;
+    }
+    a {
+      display: inline-block;
+      margin-top: 1.5rem;
+      text-decoration: none;
+      color: white;
+      background: #ff69b4;
+      padding: 0.8rem 1.5rem;
+      border-radius: 2rem;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    a:hover {
+      background: #d63384;
+    }
+  </style>
+</head>
+<body>
+  <h1>Each Star Holds a Wish for You, RuHI 💫</h1>
+  <div class="sky" id="sky"></div>
+
+  <div class="message-box" id="messageBox">You are my brightest star 🌟</div>
+
+  <a href="index.html">← Back to Surprise World</a>
+
+  <script>
+    const sky = document.getElementById('sky');
+    const messages = [
+      "You are my brightest star 🌟",
+      "Your smile lights up my night 💖",
+      "RuHI, you're my forever wish 💫",
+      "Even the stars envy your glow ✨",
+      "You are the reason my sky sparkles 💕",
+      "Rishu's heart beats in this galaxy 💓",
+      "Never stop being my sunshine 🌞 under stars",
+      "I found my universe in your eyes 🌌"
+    ];
+    const msgBox = document.getElementById('messageBox');
+
+    for (let i = 0; i < 30; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.left = Math.random() * 100 + '%';
+      star.onclick = () => {
+        const message = messages[Math.floor(Math.random() * messages.length)];
+        msgBox.textContent = message;
+        msgBox.style.display = 'block';
+        setTimeout(() => {
+          msgBox.style.display = 'none';
+        }, 3000);
+      };
+      sky.appendChild(star);
+    }
+  </script>
+</body>
+</html>

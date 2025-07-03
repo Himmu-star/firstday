@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open When... Letters 💌</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffe4ec, #fceff9);
+      color: #d63384;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2.2rem;
+    }
+    .envelopes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .envelope {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      width: 280px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .envelope:hover {
+      transform: translateY(-5px);
+    }
+    .message {
+      display: none;
+      margin-top: 1rem;
+      background: #fff0f5;
+      padding: 1rem;
+      border-radius: 1rem;
+      color: #444;
+      font-size: 1rem;
+    }
+    a {
+      display: inline-block;
+      margin-top: 2rem;
+      text-decoration: none;
+      color: white;
+      background: #d63384;
+      padding: 0.8rem 1.5rem;
+      border-radius: 2rem;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    a:hover {
+      background: #c2185b;
+    }
+  </style>
+</head>
+<body>
+  <h1>📩 Open When... 💌</h1>
+
+  <div class="envelopes">
+    <div class="envelope" onclick="toggleMessage('msg1')">
+      <h3>You're Sad</h3>
+      <div class="message" id="msg1">Smile Sona ❣️ — You are the reason my world feels brighter. I'm always here, no matter what 💖</div>
+    </div>
+    <div class="envelope" onclick="toggleMessage('msg2')">
+      <h3>You Miss Me</h3>
+      <div class="message" id="msg2">Close your eyes, feel the hug 🤗 and hear me say "I love you". I’m just a thought away.</div>
+    </div>
+    <div class="envelope" onclick="toggleMessage('msg3')">
+      <h3>You Want to Smile</h3>
+      <div class="message" id="msg3">Remember your cutie face in the mirror and the way you say "Baklol Rishu" 😄 That's magic!</div>
+    </div>
+  </div>
+
+  <a href="index.html">← Back to Surprise World</a>
+
+  <script>
+    function toggleMessage(id) {
+      const msg = document.getElementById(id);
+      msg.style.display = msg.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
