@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teddy Message for RuHI</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+      text-align: center;
+      color: #d63384;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .teddy {
+      width: 150px;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+    .message {
+      background-color: #fff;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    audio {
+      margin-top: 1rem;
+      width: 100%;
+    }
+    a {
+      display: inline-block;
+      margin-top: 2rem;
+      text-decoration: none;
+      color: white;
+      background: #ff4081;
+      padding: 0.8rem 1.5rem;
+      border-radius: 2rem;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    a:hover {
+      background: #e91e63;
+    }
+  </style>
+</head>
+<body>
+  <img src="https://cdn-icons-png.flaticon.com/128/3909/3909444.png" class="teddy" alt="Teddy" />
+  <h1>Hey Sona ❣️, Teddy Has a Voice Note for You!</h1>
+  <div class="message">
+    <p>"Aaj tumhara pehla din tha office ka... aur main yeh chhoti si awaaz mein pyar chhupakar bhej raha hoon. Always proud of you 💖"</p>
+    <audio controls>
+      <source src="your-voice-note.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <a href="index.html">← Back to Surprise World</a>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RuHI's First Day Animation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(#ffe4ec, #ffffff);
+      overflow-x: hidden;
+      text-align: center;
+      color: #d63384;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 1rem;
+    }
+    .teddy {
+      width: 120px;
+      position: relative;
+      animation: walk 12s linear infinite;
+    }
+    @keyframes walk {
+      0% { left: -150px; transform: scaleX(1); }
+      50% { left: calc(100% + 150px); transform: scaleX(1); }
+      51% { transform: scaleX(-1); }
+      100% { left: -150px; transform: scaleX(-1); }
+    }
+    .cloud {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 1rem 2rem;
+      background: #fff3f7;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      animation: floatText 4s ease-in-out infinite;
+    }
+    @keyframes floatText {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, -10px); }
+    }
+    .bg-heart {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .bg-heart span {
+      position: absolute;
+      font-size: 1.5rem;
+      color: #ff69b4;
+      animation: floatHeart 8s linear infinite;
+    }
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+      }
+    }
+    a {
+      display: inline-block;
+      margin-top: 2rem;
+      text-decoration: none;
+      color: white;
+      background: #ff4081;
+      padding: 0.8rem 1.5rem;
+      border-radius: 2rem;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    a:hover {
+      background: #e91e63;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-heart" id="heartBg"></div>
+
+  <h1>🎉 RuHI’s First Day at Work 🎉</h1>
+  <div class="cloud">
+    "Wishing you endless success and happiness on this new journey!"
+  </div>
+  <img src="https://cdn-icons-png.flaticon.com/128/3909/3909444.png" alt="Walking Teddy" class="teddy">
+
+  <a href="index.html">← Back to Surprise World</a>
+
+  <script>
+    const heartBg = document.getElementById('heartBg');
+    function createHeart() {
+      const heart = document.createElement('span');
+      heart.innerText = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (Math.random() * 2 + 1) + 'rem';
+      heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      heartBg.appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>

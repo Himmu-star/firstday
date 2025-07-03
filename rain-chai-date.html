@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rain & Chai with RuHI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #dbeeff;
+      overflow: hidden;
+      text-align: center;
+      color: #2c3e50;
+    }
+    h1 {
+      margin-top: 2rem;
+      color: #34495e;
+    }
+    .chai {
+      margin-top: 2rem;
+      width: 100px;
+      animation: steam 2s ease-in-out infinite alternate;
+    }
+    @keyframes steam {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+    .rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .drop {
+      position: absolute;
+      width: 2px;
+      height: 15px;
+      background: #3498db;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-20px); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+    .msg {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+      color: #6b4c4c;
+    }
+    a {
+      display: inline-block;
+      margin-top: 2rem;
+      text-decoration: none;
+      color: white;
+      background: #3498db;
+      padding: 0.8rem 1.5rem;
+      border-radius: 2rem;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    a:hover {
+      background: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="rain" id="rainContainer"></div>
+
+  <h1>🌧️ Rain & Chai Date with RuHI ☕</h1>
+  <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" class="chai" alt="Chai Cup" />
+  <div class="msg">
+    Baarish, chai aur tum — perfect combination for peace and love. ❤️
+  </div>
+  
+  <a href="index.html">← Back to Surprise World</a>
+
+  <script>
+    const rainContainer = document.getElementById('rainContainer');
+    function createDrop() {
+      const drop = document.createElement('div');
+      drop.className = 'drop';
+      drop.style.left = Math.random() * 100 + 'vw';
+      drop.style.animationDuration = 1 + Math.random() * 2 + 's';
+      rainContainer.appendChild(drop);
+      setTimeout(() => drop.remove(), 3000);
+    }
+    setInterval(createDrop, 100);
+  </script>
+</body>
+</html>
